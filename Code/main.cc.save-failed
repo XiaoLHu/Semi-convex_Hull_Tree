@@ -1,0 +1,206 @@
+﻿/*
+ *
+ * Copyright (C) 2017-  Yewang Chen<ywchen@hqu.edu.cn;nalandoo@gmail.com>
+ * License: GPL v1
+ * This software may be modified and distributed under the terms
+ * of license.
+ *
+ */
+ //#include <time.h>
+#include <CL/cl.h>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <windows.h>
+#include "basic_functions.h"
+#include "ConvexNode.h"
+#include "Array.hh"
+#include "Convex_Tree.h"
+#include "openCL_tool.h"
+#include "CPU_Convex_Tree.h"
+#include "GPU_Convex_Tree.h"
+#include "cyw_types.h"
+#include "data_processor.h"
+//gof. design patterns: class helper
+class Tree_Helper{
+public:
+     //alg_type specifies the this->ALG_TYPE
+    template<typename T>
+    static Convex_Tree<T>* create_a_tree(int alg_type, Matrix<T>& data, FLOAT_TYPE leaf_pts_percent){
+        Convex_Tree<T>* result=NULL;
+        if (alg_type==USE_CPU_RECURSIVE_APPRXIMATE_QP|| alg_type==USE_CPU_LEAF_APPRXIMATE_QP ){
+            result= new CPU_Convex_Tree<T>(data,leaf_pts_percent,alg_type);
+        }
+
+        if (alg_type==USE_GPU_RECURSIVE_APPRXIMATE_QP||alg_type==USE_GPU_LEAF_APPRXIMATE_QP)
+            result= new GPU_Convex_Tree<T>(data, leaf_pts_percent,alg_type);
+
+        if (alg_type==USE_GPU_CIRCLE_QUEUE_APPRXIMATE_QP)
+            //result= new GPU_Circle_Queue_Convex_Tree<T>(data, leaf_pts_percent,alg_type);
+
+        if (result!=NULL)
+            result->set_alg_type(alg_type);
+        return result;
+    }
+};
+
+Vector<NNResult<FLOAT_TYPE>* > brute_force_check(Matrix<FLOAT_TYPE>& data,
+                                                 Matrix<FLOAT_TYPE>& q_points,
+                                                 int K,
+                                                 Convex_Tree<FLOAT_TYPE>* cct )
+{
+    std::cout<<"\n brute force is starting...." ;
+    int dim=data.ncols();
+    long start_t=clock();//GetTickCount();
+    Vector<NNResult<FLOAT_TYPE>* > results;
+    results.resize(q_points.nrows());
+
+    for (int i=0;i<q_points.nrows();i++){
+        FLOAT_TYPE *q = q_points.get_matrix_raw_data()+i*dim;
+        Vector<FLOAT_TYPE> tmp_dists_square=pdist2_squre(data, q,dim);
+        results[i] = new NNResult<FLOAT_TYPE>();
+        results[i]->init(K);
+        for (int j=0; j<tmp_dists_square.size();j++){
+            results[i]->update(tmp_dists_square[j],j);
+        }
+
+        bool err=false;
+        for (int j=0;j<K;j++){
+            FLOAT_TYPE cct_result=cct->get_kNN_dists_squre(i)[j];
+            FLOAT_TYPE brute_result=results[i]->k_dists_squre[j];
+            int cct_result_index=cct->get_kNN_indexes(i)[j];
+            int brute_result_index=results[i]->k_indexes[j];
+            if ( (abs(cct_result-brute_result)>0.001)&&
+                 (cct_result_index!=brute_result_index)){
+                std::cout<<"\n error found, at point index="<<i<<" and j="<<j;
+                err=true;
+            }
+        }
+        if (err){
+            FLOAT_TYPE* tmp=cct->get_kNN_dists_squre(i);
+            int* tmp_indexes=cct->get_kNN_indexes(i);
+            std::cout<<" \n knn dist squre of query point "<<i <<" is: ";
+            for (int i=0;i<K;i++) {
+                std::cout<<tmp[i]<<", ";
+            }
+
+            std::cout<<" \n knn indexes of query point "<<i <<" is: ";
+            for (int i=0;i<K;i++) {
+                std::cout<<tmp_indexes[i]<<", ";
+            }
+            results[i]->print();
+        }
+
+        //std::cout<<"\n i="<<i<<" ";
+        //results[i]->print();
+    }
+    long end_t=clock();//GetTickCount();
+    std::cout<<"\n brute force finished, running time is "<< end_t-start_t<<"\ms" ;
+
+}
+
+void test_on_random(){
+   int K=10;
+    int dim=10;
+    Matrix<FLOAT_TYPE> data;
+
+    /*------------------------------create a random data set-----------------------------------------*/
+    data= Matrix<FLOAT_TYPE>::rand_matrix(200000,dim);
+    data/=1000;
+    //data.print();
+    /*------------------------------create a random data set-----------------------------------------*/
+
+    /*------------------------------create query points set randomly---------------------------------*/
+    Matrix<FLOAT_TYPE> q_points=Matrix<FLOAT_TYPE>::rand_matrix(10000,dim);
+    q_points /=1000;
+    /*------------------------------create query points set randomly---------------------------------*/
+
+    //create a convex tree
+    //Convex_Tree<FLOAT_TYPE>* cct= Tree_Helper::create_a_tree<FLOAT_TYPE>(USE_CPU_LEAF_APPRXIMATE_QP, data,(FLOAT_TYPE)0.005);
+    //Convex_Tree<FLOAT_TYPE>* cct= Tree_Helper::create_a_tree<FLOAT_TYPE>(USE_CPU_RECURSIVE_APPRXIMATE_QP, data,(FLOAT_TYPE)0.005);
+    Convex_Tree<FLOAT_TYPE>* cct= Tree_Helper::create_a_tree<FLOAT_TYPE>(USE_GPU_LEAF_APPRXIMATE_QP, data,(FLOAT_TYPE)0.001);
+    //Convex_Tree<FLOAT_TYPE>* cct= Tree_Helper::create_a_tree<FLOAT_TYPE>(USE_GPU_RECURSIVE_APPRXIMATE_QP, data,(FLOAT_TYPE)0.001);
+    cct->print_tree_info();
+
+    cct->kNN(q_points,K);
+    cct->print_kNN_running_time_info();
+    //cct->print_kNN_reult();
+
+    Vector<NNResult<FLOAT_TYPE>* > results=brute_force_check(data,q_points, K, cct);
+
+}
+
+void test_on_real_data(FLOAT_TYPE leaf_percent){
+    int K=10;
+    int dim;
+    //char *data_file_name="data/house_uni.txt";
+    char *data_file_name="data/blog_uni.txt";
+    //char *data_file_name="data/pam_uni.txt";
+    //char *data_file_name="data/kdd04_norm_uni.txt";
+
+    int data_size;
+    float *raw_data=read_data(data_file_name," ",&dim, &data_size);
+
+    //---create data set for query
+    Matrix<FLOAT_TYPE> data(raw_data,data_size,dim);
+    data/=1000;
+    //---data.print();
+
+
+    /*-------------------------------- Select Data Points From Dataset Randomly -------------------------------*/
+        int test_num=20000;
+        Vector<int> indx(test_num);
+        for (int i=0;i<test_num;i++){
+            indx[i]=rand()%data_size;
+        }
+        Matrix<FLOAT_TYPE> q_points=data.extractRows(indx);
+    /*------------------------------ Select Data Points From Dataset Randomly ---------------------------------*/
+
+
+    //create a convex tree
+    //Convex_Tree<FLOAT_TYPE>* cct= Tree_Helper::create_a_tree<FLOAT_TYPE>(USE_CPU_LEAF_APPRXIMATE_QP, data,(FLOAT_TYPE)0.005);
+    //Convex_Tree<FLOAT_TYPE>* cct= Tree_Helper::create_a_tree<FLOAT_TYPE>(USE_CPU_RECURSIVE_APPRXIMATE_QP, data,(FLOAT_TYPE)0.005);
+    Convex_Tree<FLOAT_TYPE>* cct= Tree_Helper::create_a_tree<FLOAT_TYPE>(USE_GPU_LEAF_APPRXIMATE_QP, data,leaf_percent);
+    //Convex_Tree<FLOAT_TYPE>* cct= Tree_Helper::create_a_tree<FLOAT_TYPE>(USE_GPU_RECURSIVE_APPRXIMATE_QP, data,(FLOAT_TYPE)0.001);
+    cct->print_tree_info();
+
+    FILE* log_file= fopen("exp_log.txt","a+");
+    write_file_log("\n\n",log_file);
+    write_file_log(data_file_name,log_file);
+    char str_tmp[10];
+    sprintf(str_tmp,"%f",leaf_percent);
+    write_file_log(",     percent threshold: ",log_file);
+    write_file_log(str_tmp,log_file);
+    cct->save_tree_info(log_file);
+
+    cct->kNN(q_points,K);
+    cct->print_kNN_running_time_info();
+    cct->save_KNN_running_time_info(log_file);
+
+    //cct->print_kNN_reult();
+    fclose(log_file);
+    Vector<NNResult<FLOAT_TYPE>* > results=brute_force_check(data,q_points, K, cct);
+}
+
+
+int main(int argc, char *const argv[])
+{
+    /*
+        leaf_percent=0.01;
+        leaf_percent=0.008;
+        leaf_percent=0.006;
+        leaf_percent=0.004;
+        leaf_percent=0.002;
+        leaf_percent=0.0009;
+        leaf_percent=0.0005;
+        leaf_percent=0.0001;
+    */
+    FLOAT_TYPE leaf_percent=0.0001;
+    test_on_real_data(leaf_percent);
+    //test_on_random();
+    int x;
+    std::cin>>x;
+    return 0;
+}
+
