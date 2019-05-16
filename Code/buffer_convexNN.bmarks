@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<BrowseTracker_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="cyw_types.h" open="1" top="0" tabpos="5">
+		<Cursor position="493" topLine="0" />
+	</File>
+	<File name="Array.cc" open="0" top="0" tabpos="5">
+		<Cursor position="318" topLine="2" />
+	</File>
+	<File name="basic_functions.h" open="1" top="0" tabpos="3">
+		<Cursor position="7811" topLine="0" />
+	</File>
+	<File name="cyw_timer.h" open="0" top="0" tabpos="9">
+		<Cursor position="2624" topLine="87" />
+	</File>
+	<File name="data_processor.h" open="1" top="0" tabpos="4">
+		<Cursor position="1846" topLine="12" />
+	</File>
+	<File name="main.cc" open="1" top="1" tabpos="2">
+		<Cursor position="1001" topLine="15" />
+		<BrowseMarks positions="25787" />
+		<Book_Marks positions="19478,23054,22084,12500" />
+	</File>
+	<File name="CPU_Convex_Tree.h" open="1" top="0" tabpos="8">
+		<Cursor position="4768" topLine="115" />
+		<BrowseMarks positions="" />
+		<Book_Marks positions="" />
+	</File>
+	<File name="openCL_tool.h" open="1" top="0" tabpos="6">
+		<Cursor position="6286" topLine="98" />
+		<BrowseMarks positions="21144" />
+	</File>
+	<File name="GPU_Convex_Tree.h" open="1" top="0" tabpos="1">
+		<Cursor position="6537" topLine="946" />
+		<BrowseMarks positions="6499" />
+	</File>
+	<File name="Array.hh" open="0" top="0" tabpos="1">
+		<Cursor position="72850" topLine="2934" />
+	</File>
+	<File name="Convex_Tree.h" open="0" top="0" tabpos="5">
+		<Cursor position="8058" topLine="937" />
+	</File>
+	<File name="ConvexNode.h" open="0" top="0" tabpos="7">
+		<Cursor position="720" topLine="66" />
+	</File>
+</BrowseTracker_layout_file>

@@ -1,0 +1,137 @@
+# depslib dependency file v1.0
+1508635938 source:d:\program files\codeblocks\projects\buffer_qpnn\array.cc
+	"Array.hh"
+	"types.h"
+
+1509177670 d:\program files\codeblocks\projects\buffer_qpnn\array.hh
+	<set>
+	<stdexcept>
+	<iostream>
+	<iomanip>
+	<cmath>
+	<cstdlib>
+	"types.h"
+	<stdexcept>
+
+1509334454 source:d:\program files\codeblocks\projects\buffer_qpnn\main.cc
+	<CL/cl.h>
+	<iostream>
+	<sstream>
+	<string>
+	<time.h>
+	<vector>
+	<windows.h>
+	"QuadProg++.hh"
+	"basic_functions.h"
+	"BKnode.h"
+	"Array.hh"
+	"BKMtree.h"
+	"openCL_tool.h"
+	"types.h"
+
+1508635885 d:\program files\codeblocks\projects\buffer_qpnn\quadprog++.hh
+	"Array.hh"
+	"types.h"
+
+1508670675 d:\program files\codeblocks\projects\buffer_qpnn\basic_functions.h
+	"Array.hh"
+	"types.h"
+
+1508738463 d:\program files\codeblocks\projects\buffer_qpnn\bknode.h
+	"Array.hh"
+	"basic_functions.h"
+	"types.h"
+
+1509334953 d:\program files\codeblocks\projects\buffer_qpnn\bkmtree.h
+	<vector>
+	<winable.h>
+	"BKnode.h"
+	"basic_functions.h"
+	"openCL_tool.h"
+	"types.h"
+
+1508635936 source:d:\program files\codeblocks\projects\buffer_qpnn\quadprog++.cc
+	<iostream>
+	<algorithm>
+	<cmath>
+	<limits>
+	<sstream>
+	<stdexcept>
+	"QuadProg++.hh"
+	"basic_functions.h"
+	"types.h"
+
+1508312594 source:d:\program files\codeblocks\projects\buffer_qpnn\util.c
+	"util.h"
+
+1508312676 d:\program files\codeblocks\projects\buffer_qpnn\util.h
+	"float.h"
+	"types.h"
+	<stdlib.h>
+	<assert.h>
+	<float.h>
+	<math.h>
+	<stdio.h>
+	<time.h>
+	<pthread.h>
+	<sched.h>
+	<errno.h>
+	<string.h>
+	<ctype.h>
+
+1508851588 d:\program files\codeblocks\projects\buffer_qpnn\types.h
+	"include/timing.h"
+	"include/float.h"
+	"include/opencl.h"
+	<string.h>
+
+1504425257 d:\program files\codeblocks\projects\buffer_qpnn\include\timing.h
+	<stdlib.h>
+	<assert.h>
+	<float.h>
+	<math.h>
+	<stdio.h>
+	<time.h>
+	<windows.h>
+	<pthread.h>
+	<sched.h>
+	<errno.h>
+	<string.h>
+	<ctype.h>
+
+1504709545 d:\program files\codeblocks\projects\buffer_qpnn\include\float.h
+
+1505184274 d:\program files\codeblocks\projects\buffer_qpnn\include\opencl.h
+	<OpenCL/cl.h>
+	<CL/cl.h>
+	<unistd.h>
+	<stdio.h>
+	<string.h>
+
+1502254552 c:\intel\opencl\sdk\include\cl\cl.h
+	<OpenCL/cl_platform.h>
+	<CL/cl_platform.h>
+
+1502254552 c:\intel\opencl\sdk\include\cl\cl_platform.h
+	<AvailabilityMacros.h>
+	<stdint.h>
+	<stddef.h>
+	<altivec.h>
+	<intrin.h>
+	<xmmintrin.h>
+	<intrin.h>
+	<emmintrin.h>
+	<mmintrin.h>
+	<intrin.h>
+	<immintrin.h>
+
+1509332069 d:\program files\codeblocks\projects\buffer_qpnn\opencl_tool.h
+	<CL/cl.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<string>
+	<fstream>
+	"types.h"
+

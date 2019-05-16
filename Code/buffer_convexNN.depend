@@ -1,0 +1,422 @@
+# depslib dependency file v1.0
+1510404074 source:d:\program files\codeblocks\projects\buffer_convexnn\array.cc
+	"Array.hh"
+
+1514271296 d:\program files\codeblocks\projects\buffer_convexnn\array.hh
+	<set>
+	<stdexcept>
+	<iostream>
+	<iomanip>
+	<cmath>
+	<cstdlib>
+	"cyw_types.h"
+	<stdexcept>
+
+1510403470 d:\program files\codeblocks\projects\buffer_convexnn\types.h
+	"include/opencl.h"
+	<string.h>
+
+1504425257 d:\program files\codeblocks\projects\buffer_convexnn\include\timing.h
+	<stdlib.h>
+	<assert.h>
+	<float.h>
+	<math.h>
+	<stdio.h>
+	<time.h>
+	<windows.h>
+	<pthread.h>
+	<sched.h>
+	<errno.h>
+	<string.h>
+	<ctype.h>
+
+1510403201 d:\program files\codeblocks\projects\buffer_convexnn\include\float.h
+
+1505184274 d:\program files\codeblocks\projects\buffer_convexnn\include\opencl.h
+	<OpenCL/cl.h>
+	<CL/cl.h>
+	<unistd.h>
+	<stdio.h>
+	<string.h>
+
+1502254552 c:\intel\opencl\sdk\include\cl\cl.h
+	<OpenCL/cl_platform.h>
+	<CL/cl_platform.h>
+
+1502254552 c:\intel\opencl\sdk\include\cl\cl_platform.h
+	<AvailabilityMacros.h>
+	<stdint.h>
+	<stddef.h>
+	<altivec.h>
+	<intrin.h>
+	<xmmintrin.h>
+	<intrin.h>
+	<emmintrin.h>
+	<mmintrin.h>
+	<intrin.h>
+	<immintrin.h>
+
+1527042656 source:d:\program files\codeblocks\projects\buffer_convexnn\main.cc
+	<CL/cl.h>
+	<iostream>
+	<sstream>
+	<string>
+	<vector>
+	<windows.h>
+	"basic_functions.h"
+	"ConvexNode.h"
+	"Array.hh"
+	"Convex_Tree.h"
+	"openCL_tool.h"
+	"CPU_Convex_Tree.h"
+	"GPU_Convex_Tree.h"
+	"cyw_types.h"
+	"data_processor.h"
+
+1509762025 d:\program files\codeblocks\projects\buffer_convexnn\quadprog++.hh
+	"Array.hh"
+	"types.h"
+
+1526455012 d:\program files\codeblocks\projects\buffer_convexnn\basic_functions.h
+	<stdio.h>
+	<stdlib.h>
+	"conio.h"
+	"Array.hh"
+	"cyw_types.h"
+
+1510222207 d:\program files\codeblocks\projects\buffer_convexnn\bknode.h
+	"Array.hh"
+	"basic_functions.h"
+	"types.h"
+
+1510224157 d:\program files\codeblocks\projects\buffer_convexnn\bkmtree.h
+	<vector>
+	<time.h>
+	<winable.h>
+	"BKnode.h"
+	"basic_functions.h"
+	"openCL_tool.h"
+	"types.h"
+	"cyw_timer.h"
+
+1526347578 d:\program files\codeblocks\projects\buffer_convexnn\opencl_tool.h
+	<CL/cl.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<string>
+	<fstream>
+	"cyw_types.h"
+
+1509948260 source:d:\program files\codeblocks\projects\buffer_convexnn\quadprog++.cc
+	<iostream>
+	<algorithm>
+	<cmath>
+	<limits>
+	<sstream>
+	<stdexcept>
+	"QuadProg++.hh"
+	"basic_functions.h"
+	"types.h"
+
+1510188763 source:d:\program files\codeblocks\projects\buffer_convexnn\timing.c
+	"include/timing.h"
+
+1510191092 d:\program files\codeblocks\projects\buffer_convexnn\timing.h
+	<stdlib.h>
+	<assert.h>
+	<float.h>
+	<math.h>
+	<stdio.h>
+	<time.h>
+	<windows.h>
+	<pthread.h>
+	<sched.h>
+	<errno.h>
+	<string.h>
+	<ctype.h>
+
+1513994920 d:\program files\codeblocks\projects\buffer_convexnn\cyw_timer.h
+
+1512088438 d:\program files\codeblocks\projects\buffer_convexnn\cpu_convex_tree.h
+	"Convex_Tree.h"
+	"ConvexNode.h"
+	"basic_functions.h"
+	"openCL_tool.h"
+	"cyw_timer.h"
+	"cyw_types.h"
+
+1514773728 d:\program files\codeblocks\projects\buffer_convexnn\convexnode.h
+	"Array.hh"
+	"basic_functions.h"
+	"cyw_types.h"
+
+1526347822 d:\program files\codeblocks\projects\buffer_convexnn\convex_tree.h
+	<stdio.h>
+	<vector>
+	<time.h>
+	<winable.h>
+	"ConvexNode.h"
+	"basic_functions.h"
+	"openCL_tool.h"
+	"cyw_timer.h"
+	"cyw_types.h"
+
+1526906212 d:\program files\codeblocks\projects\buffer_convexnn\gpu_convex_tree.h
+	"cyw_types.h"
+
+1511012498 d:\program files\codeblocks\projects\buffer_convexnn\cyw_types.h
+
+1510404073 source:d:\program files\codeblocks\projects\buffer_convexnn backup\buffer_convexnn -2017-11-21\array.cc
+	"Array.hh"
+
+1510907269 d:\program files\codeblocks\projects\buffer_convexnn backup\buffer_convexnn -2017-11-21\array.hh
+	<set>
+	<stdexcept>
+	<iostream>
+	<iomanip>
+	<cmath>
+	<cstdlib>
+	"cyw_types.h"
+	<stdexcept>
+
+1511012497 d:\program files\codeblocks\projects\buffer_convexnn backup\buffer_convexnn -2017-11-21\cyw_types.h
+
+1511338775 source:d:\program files\codeblocks\projects\buffer_convexnn backup\buffer_convexnn -2017-11-21\main.cc
+	<CL/cl.h>
+	<iostream>
+	<sstream>
+	<string>
+	<vector>
+	<windows.h>
+	"basic_functions.h"
+	"ConvexNode.h"
+	"Array.hh"
+	"Convex_Tree.h"
+	"openCL_tool.h"
+	"CPU_Convex_Tree.h"
+	"GPU_Convex_Tree.h"
+	"cyw_types.h"
+
+1510404196 d:\program files\codeblocks\projects\buffer_convexnn backup\buffer_convexnn -2017-11-21\basic_functions.h
+	"Array.hh"
+	"cyw_types.h"
+
+1510879352 d:\program files\codeblocks\projects\buffer_convexnn backup\buffer_convexnn -2017-11-21\convexnode.h
+	"Array.hh"
+	"basic_functions.h"
+	"cyw_types.h"
+
+1511054779 d:\program files\codeblocks\projects\buffer_convexnn backup\buffer_convexnn -2017-11-21\convex_tree.h
+	<vector>
+	<time.h>
+	<winable.h>
+	"ConvexNode.h"
+	"basic_functions.h"
+	"openCL_tool.h"
+	"cyw_timer.h"
+	"cyw_types.h"
+
+1510929647 d:\program files\codeblocks\projects\buffer_convexnn backup\buffer_convexnn -2017-11-21\opencl_tool.h
+	<CL/cl.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<string>
+	<fstream>
+	"cyw_types.h"
+
+1510213452 d:\program files\codeblocks\projects\buffer_convexnn backup\buffer_convexnn -2017-11-21\cyw_timer.h
+
+1511161452 d:\program files\codeblocks\projects\buffer_convexnn backup\buffer_convexnn -2017-11-21\cpu_convex_tree.h
+	"Convex_Tree.h"
+	"ConvexNode.h"
+	"basic_functions.h"
+	"openCL_tool.h"
+	"cyw_timer.h"
+	"cyw_types.h"
+
+1511257981 d:\program files\codeblocks\projects\buffer_convexnn backup\buffer_convexnn -2017-11-21\gpu_convex_tree.h
+	"cyw_types.h"
+
+1511837406 d:\program files\codeblocks\projects\buffer_convexnn\data_processor.h
+
+1510404074 source:d:\program files\codeblocks\projects\buffer convex tree\array.cc
+	"Array.hh"
+
+1514271296 d:\program files\codeblocks\projects\buffer convex tree\array.hh
+	<set>
+	<stdexcept>
+	<iostream>
+	<iomanip>
+	<cmath>
+	<cstdlib>
+	"cyw_types.h"
+	<stdexcept>
+
+1511012498 d:\program files\codeblocks\projects\buffer convex tree\cyw_types.h
+
+1523948471 source:d:\program files\codeblocks\projects\buffer convex tree\main.cc
+	<CL/cl.h>
+	<iostream>
+	<sstream>
+	<string>
+	<vector>
+	<windows.h>
+	"basic_functions.h"
+	"ConvexNode.h"
+	"Array.hh"
+	"Convex_Tree.h"
+	"openCL_tool.h"
+	"CPU_Convex_Tree.h"
+	"GPU_Convex_Tree.h"
+	"cyw_types.h"
+	"data_processor.h"
+
+1513995548 d:\program files\codeblocks\projects\buffer convex tree\basic_functions.h
+	<stdio.h>
+	<stdlib.h>
+	"conio.h"
+	"Array.hh"
+	"cyw_types.h"
+
+1514773728 d:\program files\codeblocks\projects\buffer convex tree\convexnode.h
+	"Array.hh"
+	"basic_functions.h"
+	"cyw_types.h"
+
+1514946784 d:\program files\codeblocks\projects\buffer convex tree\convex_tree.h
+	<stdio.h>
+	<vector>
+	<time.h>
+	<winable.h>
+	"ConvexNode.h"
+	"basic_functions.h"
+	"openCL_tool.h"
+	"cyw_timer.h"
+	"cyw_types.h"
+
+1514943186 d:\program files\codeblocks\projects\buffer convex tree\opencl_tool.h
+	<CL/cl.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<string>
+	<fstream>
+	"cyw_types.h"
+
+1513994920 d:\program files\codeblocks\projects\buffer convex tree\cyw_timer.h
+
+1512088438 d:\program files\codeblocks\projects\buffer convex tree\cpu_convex_tree.h
+	"Convex_Tree.h"
+	"ConvexNode.h"
+	"basic_functions.h"
+	"openCL_tool.h"
+	"cyw_timer.h"
+	"cyw_types.h"
+
+1526091423 d:\program files\codeblocks\projects\buffer convex tree\gpu_convex_tree.h
+	"cyw_types.h"
+
+1511837406 d:\program files\codeblocks\projects\buffer convex tree\data_processor.h
+
+1510404074 source:d:\program files\codeblocks\projects\buffer convex tree -nvidia\array.cc
+	"Array.hh"
+
+1514271296 d:\program files\codeblocks\projects\buffer convex tree -nvidia\array.hh
+	<set>
+	<stdexcept>
+	<iostream>
+	<iomanip>
+	<cmath>
+	<cstdlib>
+	"cyw_types.h"
+	<stdexcept>
+
+1511012498 d:\program files\codeblocks\projects\buffer convex tree -nvidia\cyw_types.h
+
+1526905332 source:d:\program files\codeblocks\projects\buffer convex tree -nvidia\main.cc
+	<CL/cl.h>
+	<iostream>
+	<sstream>
+	<string>
+	<vector>
+	<windows.h>
+	"basic_functions.h"
+	"ConvexNode.h"
+	"Array.hh"
+	"Convex_Tree.h"
+	"openCL_tool.h"
+	"CPU_Convex_Tree.h"
+	"GPU_Convex_Tree.h"
+	"cyw_types.h"
+	"data_processor.h"
+
+1526455010 d:\program files\codeblocks\projects\buffer convex tree -nvidia\basic_functions.h
+	<stdio.h>
+	<stdlib.h>
+	"conio.h"
+	"Array.hh"
+	"cyw_types.h"
+
+1514773728 d:\program files\codeblocks\projects\buffer convex tree -nvidia\convexnode.h
+	"Array.hh"
+	"basic_functions.h"
+	"cyw_types.h"
+
+1526347820 d:\program files\codeblocks\projects\buffer convex tree -nvidia\convex_tree.h
+	<stdio.h>
+	<vector>
+	<time.h>
+	<winable.h>
+	"ConvexNode.h"
+	"basic_functions.h"
+	"openCL_tool.h"
+	"cyw_timer.h"
+	"cyw_types.h"
+
+1526347576 d:\program files\codeblocks\projects\buffer convex tree -nvidia\opencl_tool.h
+	<CL/cl.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<string>
+	<fstream>
+	"cyw_types.h"
+
+1513994920 d:\program files\codeblocks\projects\buffer convex tree -nvidia\cyw_timer.h
+
+1512088438 d:\program files\codeblocks\projects\buffer convex tree -nvidia\cpu_convex_tree.h
+	"Convex_Tree.h"
+	"ConvexNode.h"
+	"basic_functions.h"
+	"openCL_tool.h"
+	"cyw_timer.h"
+	"cyw_types.h"
+
+1526906095 d:\program files\codeblocks\projects\buffer convex tree -nvidia\gpu_convex_tree.h
+	"cyw_types.h"
+
+1511837406 d:\program files\codeblocks\projects\buffer convex tree -nvidia\data_processor.h
+
+1484167205 c:\program files\nvidia gpu computing toolkit\cuda\v8.0\include\cl\cl.h
+	<OpenCL/cl_platform.h>
+	<CL/cl_platform.h>
+
+1484167205 c:\program files\nvidia gpu computing toolkit\cuda\v8.0\include\cl\cl_platform.h
+	<AvailabilityMacros.h>
+	<stdint.h>
+	<stddef.h>
+	<altivec.h>
+	<intrin.h>
+	<xmmintrin.h>
+	<intrin.h>
+	<emmintrin.h>
+	<mmintrin.h>
+	<intrin.h>
+	<immintrin.h>
+

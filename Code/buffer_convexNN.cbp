@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="buffer_convexNN" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/buffer_qpNN" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="C:/Intel/OpenCL/sdk/include" />
+					<Add directory="C:/Intel/OpenCL/sdk/lib/x86" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add library="C:/Intel/OpenCL/sdk/lib/x86/OpenCL.lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/buffer_qpNN" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+					<Add directory="C:/Intel/OpenCL/sdk/lib/x86" />
+					<Add directory="C:/Intel/OpenCL/sdk/include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="C:/Intel/OpenCL/sdk/lib/x86/OpenCL.lib" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="Array.cc" />
+		<Unit filename="Array.hh" />
+		<Unit filename="CPU_Convex_Tree.h" />
+		<Unit filename="ConvexNode.h" />
+		<Unit filename="Convex_Tree.h" />
+		<Unit filename="GPU_Convex_Tree.h" />
+		<Unit filename="basic_functions.h" />
+		<Unit filename="cyw_timer.h" />
+		<Unit filename="cyw_types.h" />
+		<Unit filename="data_processor.h" />
+		<Unit filename="gpu_brute_force_kNN.h" />
+		<Unit filename="main.cc" />
+		<Unit filename="openCL_tool.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
